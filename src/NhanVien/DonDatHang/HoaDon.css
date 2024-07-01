@@ -1,0 +1,172 @@
+.bill {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 100%;
+}
+
+.bill-content {
+  width: 65%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  overflow-x: auto;
+}
+
+.bill-menu {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 20px;
+}
+
+.bill-menu li {
+  list-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--color-text);
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.bill-menu li:hover {
+  background-color: var(--color-text);
+  color: white;
+}
+
+.bill-menu_list {
+  /* height: ; */
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  gap: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.bill-menu_list li {
+  list-style: none;
+  width: 200px;
+  height: 140px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.bill-menu_list li img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.bill-menu_iteam span {
+  position: absolute;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bill-pay {
+  width: 30%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px 20px;
+  height: 100%;
+  /* max-height: 500px; */
+}
+
+.bill-pay_header {
+  display: flex;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.bill-pay_header span {
+  width: 33%;
+  text-align: center;
+}
+
+.bill-pay_header span:first-child {
+  text-align: start;
+}
+
+.bill-pay_header span:last-child {
+  text-align: end;
+}
+
+
+.bill-item {
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+  height: 40px;
+}
+
+.bill-item span,
+.bill-item div {
+  width: 33%;
+  text-align: center;
+}
+
+.bill-item div button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  margin: auto;
+}
+
+.bill-item div span {
+  margin: 5px;
+}
+
+.bill-item span:first-child {
+  text-align: start;
+}
+
+.bill-item span:last-child {
+  text-align: end;
+}
+
+
+.bill-pay_total {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid black;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.bill-pay_button button {
+  width: 49%;
+  height: 40px;
+  border: none;
+  margin-top: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--color-text);
+  cursor: pointer;
+}
+
+.increase,
+.reduce {
+  cursor: pointer;
+}
+
+.create-bill{
+  font-size: 40px;
+}

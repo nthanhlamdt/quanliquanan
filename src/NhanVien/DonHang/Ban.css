@@ -1,0 +1,57 @@
+:root {
+  --background-table-hd: #DEAC80;
+  --color-text: rgb(68, 68, 160);
+}
+
+.table-list {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.content-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+.table {
+  width: 200px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.table-number {
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  display: block;
+  font-size: 20px;
+}
+
+.table-status {
+  padding: 15px;
+  display: block;
+}
+
+.table-empty {
+  background-color: var(--color-text);
+  color: white;
+}
+
+.table-using {
+  background-color: var(--background-table-hd);
+  color: var(--color-text);
+}
+
+.hide {
+  display: none;
+}
+
+
+
+
+/* Hóa Đơn */

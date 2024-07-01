@@ -1,0 +1,46 @@
+.btn-create_account {
+  width: 90%;
+  display: flex;
+  justify-content: end;
+  margin: 30px auto 0 auto;
+}
+
+.btn-create_account button {
+  background-color: var(--color-text);
+  color: #fff;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.table-account {
+  overflow-y: scroll;
+  max-height: 70vh;
+  width: 90%;
+  margin: 10px auto 0 auto;
+  border: 1px solid var(--color-text);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--color-text);
+  color: white;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+td {
+  padding: 8px;
+}
+
+.fa-trash-can {
+  color: var(--color-text);
+  cursor: pointer;
+}

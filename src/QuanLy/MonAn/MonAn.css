@@ -1,0 +1,137 @@
+.btn-create_food {
+  width: 90%;
+  display: flex;
+  justify-content: end;
+  margin: 30px auto 0 auto;
+}
+
+.btn-create_food button {
+  background-color: var(--color-text);
+  color: #fff;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.table-food {
+  overflow-y: scroll;
+  max-height: 70vh;
+  width: 90%;
+  margin: 10px auto 0 auto;
+  border: 1px solid var(--color-text);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--color-text);
+  color: white;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+td {
+  padding: 8px;
+}
+
+.fa-trash-can,
+.fa-image,
+.fa-pen-to-square {
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+
+.model {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-image img {
+  max-width: 500px;
+  min-width: 300px;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.model .fa-xmark {
+  position: fixed;
+  right: 50px;
+  top: 100px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+
+.form-add-food {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.form-add-food h1 {
+  margin-bottom: 40px;
+  color: var(--color-text);
+}
+
+.infor-data {
+  margin: 5px;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infor-data label {
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+.infor-data input {
+  width: 200px;
+  padding: 3px 0 3px 5px;
+  outline: none;
+  border-color: var(--color-text);
+}
+
+.form-add-food button {
+  margin-top: 20px;
+  padding: 10px 5px;
+  background-color: var(--color-text);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.type-food {
+  width: 200px;
+}
+
+.type-food select {
+  padding: 3px;
+  border-color: var(--color-text);
+}
+
+.hide {
+  display: none;
+}

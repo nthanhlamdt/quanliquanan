@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-text: rgb(68, 68, 160);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.header {
+  height: 60px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.header-intro {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.header-intro span {
+  font-size: 20px;
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+.header-search {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  margin-left: 50px;
+}
+
+.header-search input {
+  font-size: 15px;
+  padding: 8px 0 8px 10px;
+  border: none;
+  outline: none;
+  width: 230px;
+}
+
+.header-search button {
+  padding: 10px 14px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header-search button i {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.header-infor {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.header-infor_name {
+  color: var(--color-text);
+  margin-right: 5px;
+}
+
+.header-infor_avata {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: auto;
+  background-color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.header-infor_avata span {
+  display: inline-block;
+  font-weight: bold;
+  color: white;
+}
+
+.log-out {
+  position: absolute;
+  width: 200px;
+  background-color: white;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
+  top: 45px;
+  right: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.log-out li {
+  list-style: none;
+  padding: 10px 15px;
+}
+
+.log-out li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.log-out li i {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.log-out li span {
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  padding-left: 5px;
+}
+
+.main {
+  margin-left: 300px;
+}
+
+.menu {
+  background-color: white;
+  min-width: 300px;
+  padding-bottom: auto;
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+}
+
+.menu nav {
+  margin-top: 40px;
+}
+
+.menu nav li {
+  list-style: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.menu nav li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu nav li i {
+  margin-right: 5px;
+}
+
+.menu nav li a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  padding: 12px 0 12px 30px;
+}
+
+.content {
+  background-color: white;
+  margin: 20px;
+  margin-top: 80px;
+  padding: 20px;
+  margin-right: 30px;
+  min-height: 90vh;
+}
+
+.content .name-content {
+  font-size: 25px;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-text);
+  padding-bottom: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+/* Màu sắc của thanh cuộn */
+::-webkit-scrollbar {
+  width: 12px;
+  /* Chiều rộng của thanh cuộn */
+}
+
+/* Màu nền của thanh cuộn */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Màu nền khi di chuột qua thanh cuộn */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+/* Màu sắc của thanh cuộn khi di chuột qua */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Hiển thị thanh cuộn chỉ khi cần thiết */
+::-webkit-scrollbar {
+  display: auto;
+}
+
+/* Ẩn thanh cuộn ngang khi không được sử dụng */
+::-webkit-scrollbar {
+  display: none;
+}

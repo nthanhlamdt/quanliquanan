@@ -1,0 +1,123 @@
+.btn-create_staff {
+  width: 90%;
+  display: flex;
+  justify-content: end;
+  margin: 30px auto 0 auto;
+}
+
+.btn-create_staff button {
+  background-color: var(--color-text);
+  color: #fff;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.table-staff {
+  overflow-y: scroll;
+  max-height: 70vh;
+  width: 90%;
+  margin: 10px auto 0 auto;
+  border: 1px solid var(--color-text);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--color-text);
+  color: white;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+td {
+  padding: 8px;
+}
+
+.fa-trash-can {
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.fa-pen-to-square {
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+
+.model .fa-xmark {
+  position: fixed;
+  right: 50px;
+  top: 100px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+
+.form-add-staff {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.infor-data {
+  margin: 5px;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infor-data label {
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+.infor-data input {
+  width: 200px;
+  padding: 3px 0 3px 5px;
+  outline: none;
+  border-color: var(--color-text);
+}
+
+.form-add-staff button {
+  margin-top: 20px;
+  padding: 10px 5px;
+  background-color: var(--color-text);
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.male-female {
+  width: 200px;
+}
+
+.male-female input {
+  width: 10px;
+  margin-right: 10px;
+}
+
+.position-staff {
+  width: 200px;
+}
+
+.position-staff select {
+  width: 100px;
+  height: 30px;
+  color: var(--color-text);
+  border-color: var(--color-text);
+  font-weight: bold;
+  outline: none;
+}

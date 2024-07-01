@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Món Ăn</title>
+  <link rel="stylesheet" href="/fontawesome-free-6.5.2-web/css/all.min.css">
+  <link rel="stylesheet" href="/shared/style.css">
+  <link rel="stylesheet" href="./MonAn.css">
+  <script src="/shared/API.js"></script>
+  <script src="/shared/GetAPI.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-intro">
+      <span>VULAMSYNGUYEN</span>
+    </div>
+
+    <div class="header-infor">
+      <span class="header-infor_name"></span>
+      <div class="header-infor_avata">
+        <span>L</span>
+        <ul class="log-out hide">
+          <li>
+            <i class="fa-regular fa-user"></i>
+            <span>Profile</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </li>
+
+          <li class="select-logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span>Logout</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu">
+    <nav>
+      <li>
+        <a href="/src/QuanLy/BaoCaoThongKe/BaoCao.html">
+          <i class="fa-solid fa-chart-simple"></i>
+          Báo cáo thông kê
+        </a>
+      </li>
+
+      <li>
+        <a href="/src/QuanLy/Luong/Luong.html">
+          <i class="fa-solid fa-piggy-bank"></i>
+          Lương
+        </a>
+      </li>
+
+      <li style=" background-color: rgb(68, 68, 160); ">
+        <a style=" color: white;" href="/src/QuanLy/MonAn/MonAn.html">
+          <i class="fa-solid fa-bowl-food"></i>
+          Món ăn
+        </a>
+      </li>
+
+      <li>
+        <a href="/src/QuanLy/NhanVien/NhanVien.html">
+          <i class="fa-solid fa-circle-user"></i>
+          Nhân viên
+        </a>
+      </li>
+
+      <li>
+        <a href="/src/QuanLy/TaiKhoan/TaiKhoan.html">
+          <i class="fa-solid fa-user-group"></i>
+          Tài khoản
+        </a>
+      </li>
+
+      <li>
+        <a href="/src/QuanLy/Kho/Kho.html">
+          <i class="fa-solid fa-warehouse"></i>
+          Kho Hàng
+        </a>
+      </li>
+
+      <li>
+        <a href="/src/QuanLy/ThucPham/ThucPham.html">
+          <i class="fa-solid fa-burger"></i>
+          Thực Phẩm
+        </a>
+      </li>
+    </nav>
+  </div>
+
+  <div class="main">
+    <div class="content">
+      <h1 class="name-content">Món Ăn</h1>
+      <div class="food">
+        <div class="btn-create_food">
+          <button>Thêm +</button>
+        </div>
+
+        <div class="table-food">
+          <table>
+            <thead>
+              <tr>
+                <td>STT</td>
+                <td>Mã Món Ăn</td>
+                <td>Tên Món Ăn</td>
+                <td>Loại</td>
+                <td>Giá Bán</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </thead>
+
+            <tbody>
+              <!-- LẤY DỮ LIỆU TỪ MonAn.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- hiển thị hình ảnh món ăn -->
+  <div class="show-image model hide">
+  </div>
+
+  <div class="model hide  add-food">
+
+    <i class="fa-solid fa-xmark" onclick="closeImageFood()"></i>
+
+    <div class="form-add-food">
+      <h1>THÊM MÓN ĂN</h1>
+      <div class="infor-data">
+        <label for="">Tên Món Ăn</label>
+        <input class="name-food" type="text">
+      </div>
+
+      <div class="infor-data">
+        <label for="">Giá Bán</label>
+        <input class="price-food" type="text">
+      </div>
+
+      <div class="infor-data">
+        <label for="">Loại</label>
+        <div class="type-food">
+          <select name="" id="">
+            <option value="Ốc">Ốc</option>
+            <option value="Lẩu">Lẩu</option>
+            <option value="Nướng">Nướng</option>
+            <option value="Nước uống">Nước Uống</option>
+            <option value="Combo">Combo</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="infor-data">
+        <label for="">Hình ảnh</label>
+        <input class="iput-file" type="file">
+      </div>
+
+      <button class="add-food-btn">Thêm Món Ăn</button>
+    </div>
+  </div>
+  <script src="/shared/main.js"></script>
+  <script src="./PhuongThuc.js"></script>
+  <script src="./XoaMonAn.js"></script>
+  <script src="./HienThiAnh.js"></script>
+  <script src="./ThemMonAn.js"></script>
+  <script src="./MonAn.js"></script>
+</body>
+
+</html>

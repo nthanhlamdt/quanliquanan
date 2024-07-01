@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Nhân Viên</title>
+  <link rel="stylesheet" href="/fontawesome-free-6.5.2-web/css/all.min.css">
+  <link rel="stylesheet" href="/shared/style.css">
+  <link rel="stylesheet" href="./NhanVien.css">
+  <script src="/shared/API.js"></script>
+  <script src="/shared/GetAPI.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-intro">
+      <span>VULAMSYNGUYEN</span>
+    </div>
+
+    <div class="header-infor">
+      <span class="header-infor_name"></span>
+      <div class="header-infor_avata">
+        <span>L</span>
+        <ul class="log-out hide">
+          <li>
+            <i class="fa-regular fa-user"></i>
+            <span>Profile</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </li>
+          <li class="select-logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span>Logout</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="menu">
+    <nav>
+      <li>
+        <a href="/src/QuanLy/BaoCaoThongKe/BaoCao.html">
+          <i class="fa-solid fa-chart-simple"></i>
+          Báo cáo thông kê
+        </a>
+      </li>
+
+      <li>
+        <a href="/src/QuanLy/Luong/Luong.html">
+          <i class="fa-solid fa-piggy-bank"></i>
+          Lương
+        </a>
+      </li>
+
+      <li>
+        <a href="/srcQuanLy/MonAn/MonAn.html">
+          <i class="fa-solid fa-bowl-food"></i>
+          Món ăn
+        </a>
+      </li>
+
+      <li style=" background-color: rgb(68, 68, 160); ">
+        <a style=" color: white;" href="/src/QuanLy/NhanVien/NhanVien.html">
+          <i class="fa-solid fa-circle-user"></i>
+          Nhân viên
+        </a>
+      </li>
+
+      <li>
+        <a href="/src/QuanLy/TaiKhoan/TaiKhoan.html">
+          <i class="fa-solid fa-user-group"></i>
+          Tài khoản
+        </a>
+      </li>
+
+      <li>
+        <a href="/src/QuanLy/Kho/Kho.html">
+          <i class="fa-solid fa-warehouse"></i>
+          Kho Hàng
+        </a>
+      </li>
+
+      <li>
+        <a href="/src/QuanLy/ThucPham/ThucPham.html">
+          <i class="fa-solid fa-burger"></i>
+          Thực Phẩm
+        </a>
+      </li>
+    </nav>
+  </div>
+  <div class="main">
+    <div class="content">
+      <h1 class="name-content">Nhân Viên</h1>
+      <div class="staff">
+        <div class="btn-create_staff">
+          <button>Thêm Nhân Viên +</button>
+        </div>
+
+        <div class="table-staff">
+          <table>
+            <thead>
+              <tr>
+                <td>STT</td>
+                <td>Mã Nhân Viên</td>
+                <td>Họ Tên</td>
+                <td>Giới Tính</td>
+                <td>Email</td>
+                <td>Số Điện Thoại</td>
+                <td>Chức Vụ</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </thead>
+
+            <tbody>
+              <!-- Lấy từ NHANVIEN.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- form thêm nhân viên -->
+  <div class="model hide add-staff">
+    <i class="fa-solid fa-xmark" onclick="closeImageFood()"></i>
+
+    <div class="form-add-staff">
+      <div class="infor-data">
+        <label for="">Mã Nhân Viên</label>
+        <input type="text">
+      </div>
+
+      <div class="infor-data">
+        <label for="">Họ Tên</label>
+        <input type="text">
+      </div>
+
+      <div class="infor-data">
+        <label for="">Giới Tính</label>
+        <div class="male-female">
+          <label for="">Nam</label>
+          <input type="radio" name="male-female" value="Nam" checked>
+          <label for="">Nữ</label>
+          <input type="radio" name="male-female" value="Nữ">
+          <label for="">Khác</label>
+          <input type="radio" name="male-female" value="Khác">
+        </div>
+      </div>
+
+      <div class="infor-data">
+        <label for="">Số Điện Thoại</label>
+        <input type="text">
+      </div>
+
+      <div class="infor-data">
+        <label for="">Email</label>
+        <input type="text">
+      </div>
+
+      <div class="infor-data">
+        <label for="">Chức Vụ</label>
+        <div class="position-staff">
+          <select name="" id="">
+            <option value="Nhân Viên">Nhân Viên</option>
+            <option value="Quản Lí">Quản Lí</option>
+          </select>
+        </div>
+      </div>
+
+      <button>Thêm Nhân Viên</button>
+    </div>
+  </div>
+  <script src="/shared/main.js"></script>
+  <script src="./NhanVien.js"></script>
+</body>
+
+</html>
