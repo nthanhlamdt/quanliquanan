@@ -697,181 +697,199 @@
     {
       "id": "6",
       "nameFood": "Ốc Bưu Hấp Sả",
-      "type": "Ốc",
+      "type": "1",
       "price": 45000,
       "illustration": "/Image/img-food/F006.png"
     },
     {
       "id": "7",
       "nameFood": "Ốc Bưu Hấp Thái",
-      "type": "Ốc",
+      "type": "1",
       "price": 45000,
       "illustration": "/Image/img-food/F007.jpg"
     },
     {
       "id": "8",
       "nameFood": "Ốc Móng Tay Xào Mỳ",
-      "type": "Ốc",
+      "type": "1",
       "price": 55000,
       "illustration": "/Image/img-food/F008.jpg"
     },
     {
       "id": "9",
       "nameFood": "Ốc Móng Tay Xào Xả Ớt",
-      "type": "Ốc",
+      "type": "1",
       "price": 50000,
       "illustration": "/Image/img-food/F009.jpg"
     },
     {
       "id": "10",
       "nameFood": "Ốc Móng Tay Xào Rau Muống",
-      "type": "Ốc",
+      "type": "1",
       "price": 50000,
       "illustration": "/Image/img-food/F010.jpg"
     },
     {
       "id": "11",
       "nameFood": "Chíp Chíp Hấp sả",
-      "type": "Ốc",
+      "type": "1",
       "price": 45000,
       "illustration": "/Image/img-food/F011.jpg"
     },
     {
       "id": "12",
       "nameFood": "Chíp Chíp Sốt Thái",
-      "type": "Ốc",
+      "type": "1",
       "price": 50000,
       "illustration": "/Image/img-food/F012.jpg"
     },
     {
       "id": "13",
       "nameFood": "Lẩu Thái 1 Người",
-      "type": "Lẩu",
+      "type": "2",
       "price": 39000,
       "illustration": "/Image/img-food/F013.jpg"
     },
     {
       "id": "14",
       "nameFood": "Lẩu Thái Hải Sản",
-      "type": "Lẩu",
+      "type": "2",
       "price": 99000,
       "illustration": "/Image/img-food/F014.jpg"
     },
     {
       "id": "15",
       "nameFood": "Lẩu Thái Ba Chỉ Bò Mỹ",
-      "type": "Lẩu",
+      "type": "2",
       "price": 99000,
       "illustration": "/Image/img-food/F015.jpg"
     },
     {
       "id": "16",
       "nameFood": "Lẩu Thái Lườn Cá Hồi",
-      "type": "Lẩu",
+      "type": "2",
       "price": 99000,
       "illustration": "/Image/img-food/F016.jpg"
     },
     {
       "id": "17",
       "nameFood": "Hàu + Xúc Xích",
-      "type": "Nướng",
+      "type": "3",
       "price": 69000,
       "illustration": "/Image/img-food/F017.jpg"
     },
     {
       "id": "18",
       "nameFood": "Ba Chỉ Bò + Xúc Xích",
-      "type": "Nướng",
+      "type": "3",
       "price": 79000,
       "illustration": "/Image/img-food/F018.jpg"
     },
     {
       "id": "19",
       "nameFood": "Sét 99k",
-      "type": "Nướng",
+      "type": "3",
       "price": 99000,
       "illustration": "/Image/img-food/F019.jpg"
     },
     {
       "id": "20",
       "nameFood": "Sét 149k",
-      "type": "Nướng",
+      "type": "3",
       "price": 149000,
       "illustration": "/Image/img-food/F020.jpg"
     },
     {
       "id": "21",
       "nameFood": "Nước Suối",
-      "type": "Đồ Uống",
+      "type": "4",
       "price": 8000,
       "illustration": "/Image/img-food/F021.jpg"
     },
     {
       "id": "22",
       "nameFood": "CoCa",
-      "type": "Đồ Uống",
+      "type": "4",
       "price": 15000,
       "illustration": "/Image/img-food/F022.jpg"
     },
     {
       "id": "23",
       "nameFood": "Sprite",
-      "type": "Đồ Uống",
+      "type": "4",
       "price": 15000,
       "illustration": "/Image/img-food/F023.jpg"
     },
     {
       "id": "24",
       "nameFood": "Sting",
-      "type": "Đồ Uống",
+      "type": "4",
       "price": 15000,
       "illustration": "/Image/img-food/F024.jpg"
     },
     {
       "id": "25",
       "nameFood": "Bia Larue",
-      "type": "Đồ Uống",
+      "type": "4",
       "price": 14000,
       "illustration": "/Image/img-food/F025.jpg"
     },
     {
       "id": "26",
       "nameFood": "Bia Huda",
-      "type": "Đồ Uống",
+      "type": "4",
       "price": 14000,
       "illustration": "/Image/img-food/F026.jpg"
     },
     {
       "id": "27",
       "nameFood": "Bia Heineken",
-      "type": "Đồ Uống",
+      "type": "4",
       "price": 22000,
       "illustration": "/Image/img-food/F027.jpg"
     },
     {
       "id": "28",
       "nameFood": "Rượu SoJu",
-      "type": "Đồ Uống",
+      "type": "4",
       "price": 56000,
       "illustration": "/Image/img-food/F028.jpg"
     },
     {
       "id": "37de",
       "nameFood": "Ốc Hương Xào Bơ Tỏi",
-      "type": "Ốc",
+      "type": "1",
       "price": 55000,
       "illustration": "/Image/img-food/F001.jpg"
+    }
+  ],
+  "typeFood": [
+    {
+      "id": "1",
+      "nameType": "Ốc"
+    },
+    {
+      "id": "2",
+      "nameType": "Lẩu"
+    },
+    {
+      "id": "3",
+      "nameType": "Nướng"
+    },
+    {
+      "id": "4",
+      "nameType": "Đồ Uống"
     }
   ],
   "table": [
     {
       "id": "1",
       "nameTable": "Bàn 1",
-      "status": true,
+      "status": false,
       "food": [
         {
           "id_food": "6",
-          "quantity": 1
+          "quantity": 3
         }
       ],
       "quantitative": []
@@ -902,14 +920,9 @@
     },
     {
       "id": "6",
-      "status": true,
+      "status": false,
       "nameTable": "Bàn 6",
-      "food": [
-        {
-          "id_food": "6",
-          "quantity": 1
-        }
-      ]
+      "food": []
     },
     {
       "id": "7",
@@ -949,26 +962,9 @@
     },
     {
       "id": "13",
-      "status": true,
+      "status": false,
       "nameTable": "Bàn 13",
-      "food": [
-        {
-          "id_food": "7",
-          "quantity": 1
-        },
-        {
-          "id_food": "8",
-          "quantity": 1
-        },
-        {
-          "id_food": "12",
-          "quantity": 1
-        },
-        {
-          "id_food": "11",
-          "quantity": 1
-        }
-      ]
+      "food": []
     },
     {
       "id": "14",

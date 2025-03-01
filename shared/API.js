@@ -16,11 +16,10 @@ function getDataGoods(callback) {
       console.error('Có lỗi xảy ra:', error);
     });
 }
-
-function getDataAccount(callback) {
+const getDataAccount = (data) => {
   return fetch(ACCOUNT_API)
     .then(response => response.json())
-    .then(callback)
+    .then(data)
     .catch(error => {
       console.error('Có lỗi xảy ra:', error);
     });
@@ -35,10 +34,9 @@ function getDataStaff(callback) {
     });
 }
 
-function getDataFood(callback) {
+function getDataFood() {
   return fetch(FOOD_API)
     .then(response => response.json())
-    .then(callback)
     .catch(error => {
       console.error('Có lỗi xảy ra:', error);
     });
@@ -80,14 +78,12 @@ function getDataWarehouse(callback) {
     });
 }
 
-
-
-function startGetAccount() {
-  getDataAccount((account) => {
-    var jsonAccount = JSON.stringify(account)
-    localStorage.setItem('ACCOUNT', jsonAccount)
-  })
-}
+// export function startGetAccount() {
+//   getDataAccount((account) => {
+//     var jsonAccount = JSON.stringify(account)
+//     localStorage.setItem('ACCOUNT', jsonAccount)
+//   })
+// }
 
 function startGetStaff() {
   getDataStaff((staff) => {
@@ -138,7 +134,7 @@ function startGetGoods() {
   })
 }
 
-startGetAccount()
+// startGetAccount()
 startGetStaff()
 startGetFood()
 startGetTable()

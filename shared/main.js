@@ -1,4 +1,4 @@
-var accountStaff = JSON.parse(localStorage.getItem('StaffId'))
+var accountStaff = JSON.parse(localStorage.getItem('user'))
 const headerInforName = document.querySelector('.header-infor_name')
 
 headerInforName.textContent = accountStaff.HoTen
@@ -18,8 +18,11 @@ headerInforAvata.addEventListener('click', () => {
   logOut.classList.toggle('hide')
 })
 
+
 const selectLogout = document.querySelector('.select-logout')
 
 selectLogout.addEventListener('click', () => {
+  localStorage.removeItem('user')
+  alert('Đăng xuất thành công!')
   window.location.href = '/src/DangNhap/DangNhap.html';
 })
