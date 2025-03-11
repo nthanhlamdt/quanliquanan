@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="/fontawesome-free-6.5.2-web/css/all.min.css">
   <link rel="stylesheet" href="./Luong.css">
   <link rel="stylesheet" href="/shared/style.css">
-  <script src="/shared/API.js"></script>
-  <script src="/shared/GetAPI.js"></script>
 </head>
 
 <body>
@@ -40,121 +38,124 @@
     </div>
   </div>
 
-  <div class="menu">
-    <nav>
-      <li>
-        <a href="/src/QuanLy/BaoCaoThongKe/BaoCao.html">
-          <i class="fa-solid fa-chart-simple"></i>
-          Báo cáo thông kê
-        </a>
-      </li>
+  <div class="container">
+    <div class="menu">
+      <nav>
+        <li>
+          <a href="/src/QuanLy/BaoCaoThongKe/BaoCao.html">
+            <i class="fa-solid fa-chart-simple"></i>
+            Báo cáo thông kê
+          </a>
+        </li>
 
-      <li style=" background-color: rgb(68, 68, 160); ">
-        <a style=" color: white;" href="/src/QuanLy/Luong/Luong.html">
-          <i class="fa-solid fa-piggy-bank"></i>
-          Lương
-        </a>
-      </li>
+        <li style=" background-color: #f4a261">
+          <a style=" color: white;" href="/src/QuanLy/Luong/Luong.html">
+            <i class="fa-solid fa-piggy-bank"></i>
+            Lương
+          </a>
+        </li>
 
-      <li>
-        <a href="/src/QuanLy/MonAn/MonAn.html">
-          <i class="fa-solid fa-bowl-food"></i>
-          Món ăn
-        </a>
-      </li>
+        <li>
+          <a href="/src/QuanLy/MonAn/MonAn.html">
+            <i class="fa-solid fa-bowl-food"></i>
+            Món ăn
+          </a>
+        </li>
 
-      <li>
-        <a href="/src/QuanLy/NhanVien/NhanVien.html">
-          <i class="fa-solid fa-circle-user"></i>
-          Nhân viên
-        </a>
-      </li>
+        <li>
+          <a href="/src/QuanLy/NhanVien/NhanVien.html">
+            <i class="fa-solid fa-circle-user"></i>
+            Nhân viên
+          </a>
+        </li>
 
-      <li>
-        <a href="/src/QuanLy/TaiKhoan/TaiKhoan.html">
-          <i class="fa-solid fa-user-group"></i>
-          Tài khoản
-        </a>
-      </li>
+        <li>
+          <a href="/src/QuanLy/TaiKhoan/TaiKhoan.html">
+            <i class="fa-solid fa-user-group"></i>
+            Tài khoản
+          </a>
+        </li>
 
-      <li>
-        <a href="/src/QuanLy/Kho/Kho.html">
-          <i class="fa-solid fa-warehouse"></i>
-          Kho Hàng
-        </a>
-      </li>
+        <li>
+          <a href="/src/QuanLy/DanhMucMonAn/Danhmucmonan.html">
+            <i class="fa-solid fa-utensils"></i>
+            Danh Mục Món Ăn
+          </a>
+        </li>
 
-      <li>
-        <a href="/src/QuanLy/ThucPham/ThucPham.html">
-          <i class="fa-solid fa-burger"></i>
-          Thực Phẩm
-        </a>
-      </li>
-    </nav>
-  </div>
+        <li>
+          <a href="/src/QuanLy/Quanlyban/ban.html">
+            <i class="fa-solid fa-table"></i>
+            Bàn
+          </a>
+        </li>
 
-  <div class="main">
-    <div class="content">
-      <div class="content-wage ">
-        <h1 class="name-content">Lương</h1>
-        <div class="wage">
-          <div class="btn-create_wage">
-            <select class="month-select">
-              <option value="1">Tháng 1</option>
-              <option value="2">Tháng 2</option>
-              <option value="3">Tháng 3</option>
-              <option value="4">Tháng 4</option>
-              <option value="5">Tháng 5</option>
-              <option value="6">Tháng 6</option>
-              <option value="7">Tháng 7</option>
-              <option value="8">Tháng 8</option>
-              <option value="9">Tháng 9</option>
-              <option value="10">Tháng 10</option>
-              <option value="11">Tháng 11</option>
-              <option value="12">Tháng 12</option>
-            </select>
+      </nav>
+    </div>
+
+    <div class="main">
+      <div class="content">
+        <div class="content-wage ">
+          <h1 class="name-content">Lương</h1>
+          <div class="wage">
+            <div class="btn-create_wage">
+              <select class="month-select">
+                <option value="1">Tháng 1</option>
+                <option value="2">Tháng 2</option>
+                <option value="3">Tháng 3</option>
+                <option value="4">Tháng 4</option>
+                <option value="5">Tháng 5</option>
+                <option value="6">Tháng 6</option>
+                <option value="7">Tháng 7</option>
+                <option value="8">Tháng 8</option>
+                <option value="9">Tháng 9</option>
+                <option value="10">Tháng 10</option>
+                <option value="11">Tháng 11</option>
+                <option value="12">Tháng 12</option>
+              </select>
+            </div>
+
+            <table class="table-wage ">
+              <thead>
+                <tr>
+                  <td>STT</td>
+                  <td>Mã Nhân Viên</td>
+                  <td>Tên Nhân Viên</td>
+                  <td>Tổng Lương</td>
+                  <td>Tháng</td>
+                  <td></td>
+                </tr>
+              </thead>
+
+              <tbody>
+                <!-- Lấy dữ liệu từ Luong.js -->
+              </tbody>
+            </table>
           </div>
+        </div>
 
-          <table class="table-wage ">
+        <div class="wage-detail hide">
+          <h1 class="name-content">Lương > Chi Tiết</h1>
+          <table class="table-detail">
             <thead>
               <tr>
                 <td>STT</td>
-                <td>Mã Nhân Viên</td>
-                <td>Tên Nhân Viên</td>
-                <td>Tổng Lương</td>
-                <td>Tháng</td>
-                <td></td>
+                <td>Ngày</td>
+                <td>Thời Gian Làm Việc</td>
+                <td>Lương</td>
               </tr>
             </thead>
 
             <tbody>
-              <!-- Lấy dữ liệu từ Luong.js -->
+              <!-- <tr>
+                <td>1</td>
+                <td>30/03/2024</td>
+                <td>9 giờ 30 phút</td>
+                <td>200.000</td>
+              </tr> -->
             </tbody>
           </table>
         </div>
-      </div>
-
-      <div class="wage-detail hide">
-        <h1 class="name-content">Lương > Chi Tiết</h1>
-        <table class="table-detail">
-          <thead>
-            <tr>
-              <td>STT</td>
-              <td>Ngày</td>
-              <td>Thời Gian Làm Việc</td>
-              <td>Lương</td>
-            </tr>
-          </thead>
-
-          <tbody>
-            <!-- <tr>
-              <td>1</td>
-              <td>30/03/2024</td>
-              <td>9 giờ 30 phút</td>
-              <td>200.000</td>
-            </tr> -->
-          </tbody>
-        </table>
       </div>
     </div>
   </div>

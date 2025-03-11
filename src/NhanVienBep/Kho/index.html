@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quản Lý Tài Khoản</title>
+  <title>Quản Lý Kho</title>
   <link rel="stylesheet" href="/fontawesome-free-6.5.2-web/css/all.min.css">
-  <link rel="stylesheet" href="./TaiKhoan.css">
+  <link rel="stylesheet" href="./Kho.css">
   <link rel="stylesheet" href="/shared/style.css">
   <script src="/shared/API.js"></script>
   <script src="/shared/GetAPI.js"></script>
@@ -15,6 +15,7 @@
 <body>
   <div class="header">
     <div class="header-intro">
+      <i class="fa-solid fa-bars"></i>
       <span>VULAMSYNGUYEN</span>
     </div>
 
@@ -39,85 +40,66 @@
       </div>
     </div>
   </div>
-
+  
   <div class="container">
     <div class="menu">
       <nav>
         <li>
-          <a href="/src/QuanLy/BaoCaoThongKe/BaoCao.html">
-            <i class="fa-solid fa-chart-simple"></i>
-            Báo cáo thông kê
+          <a href="/src/NhanVienBep/Bep">
+            <i class="fa-solid fa-kitchen-set"></i>
+            Bếp
+          </a>
+        </li>
+
+        <li style="background-color: rgb(68, 68, 160); ">
+          <a style="color: white;"  href="/src/NhanVienBep/Kho">
+            <i class="fa-solid fa-boxes-stacked"></i>
+            Kho
           </a>
         </li>
 
         <li>
-          <a href="/src/QuanLy/Luong/Luong.html">
-            <i class="fa-solid fa-piggy-bank"></i>
-            Lương
+          <a href="/src/NhanVien/LichSuDon">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            Lịch sử đơn
           </a>
         </li>
 
         <li>
-          <a href="/src/QuanLy/MonAn/MonAn.html">
-            <i class="fa-solid fa-bowl-food"></i>
-            Món ăn
+          <a href="/src/NhanVien/ChamCong/">
+            <i class="fa-solid fa-money-check-dollar"></i>
+            Chấm công
           </a>
         </li>
-
-        <li>
-          <a href="/src/QuanLy/NhanVien/NhanVien.html">
-            <i class="fa-solid fa-circle-user"></i>
-            Nhân viên
-          </a>
-        </li>
-
-        <li style=" background-color: #f4a261">
-          <a style=" color: white;" href="/src/QuanLy/TaiKhoan/TaiKhoan.html">
-            <i class="fa-solid fa-user-group"></i>
-            Tài khoản
-          </a>
-        </li>
-
-        <li>
-          <a href="/src/QuanLy/DanhMucMonAn/Danhmucmonan.html">
-            <i class="fa-solid fa-utensils"></i>
-            Danh Mục Món Ăn
-          </a>
-        </li>
-
-        <li>
-          <a href="/src/QuanLy/Quanlyban/ban.html">
-            <i class="fa-solid fa-table"></i>
-            Bàn
-          </a>
-        </li>
-        
       </nav>
     </div>
-
+    
     <div class="main">
       <div class="content">
-        <h1 class="name-content">Tài Khoản</h1>
-        <div class="account">
-          <div class="btn-create_account">
-            <button>Tạo tài khoản</button>
+        <h1 class="name-content">Kho</h1>
+        <div class="warehouse">
+          <div class="btn-create_warehouse">
+            <button>Thêm +</button>
           </div>
 
-          <div class="table-account">
+          <div class="table-warehouse">
             <table>
               <thead>
                 <tr>
                   <td>STT</td>
-                  <td>Mã Nhân Viên</td>
-                  <td>Email</td>
-                  <td>Mật Khẩu</td>
-                  <td>Phân Quyền</td>
+                  <td>Mã Thực Phẩm</td>
+                  <td>Tên Thực Phẩm</td>
+                  <td>Đơn Vị Tính</td>
+                  <td>Tồn kho</td>
+                  <td>Ngày Nhập</td>
+                  <td>Nhà Cung Cấp</td>
+                  <td></td>
                   <td></td>
                 </tr>
               </thead>
 
               <tbody>
-                <!-- Lấy từ TAIKHOAN.js -->
+                <!-- Lấy dữ liệu từ Kho.js -->
               </tbody>
             </table>
           </div>
@@ -125,8 +107,8 @@
       </div>
     </div>
   </div>
-  <script src="./TaiKhoan.js"></script>
   <script src="/shared/main.js"></script>
+  <script src="./Kho.js"></script>
 </body>
 
 </html>

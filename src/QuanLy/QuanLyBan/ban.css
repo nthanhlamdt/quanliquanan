@@ -1,0 +1,43 @@
+.btn-create_staff button {
+  background-color: var(--color-text);
+  color: #fff;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.img-table{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border:  1px solid rgba(0, 0, 0, 0.4); ;
+}
+.wrapper-table{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+  margin-top: 50px;
+}
+.order-table{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.table-number{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+#ban5{
+  backdrop-filter: blur(10px); /* Làm mờ nền */
+    background: rgba(255, 255, 255, 0.3); /* Tăng độ trong suốt */
+
+}
+.content{
+  max-height: 300px;
+  overflow-y: auto;
+}

@@ -1,11 +1,16 @@
+const SALARY_API = "http://localhost:3000/salary"
+
 const contentWage = document.querySelector('.content-wage')
 const wageDetail = document.querySelector('.wage-detail ')
 
 const wageDetailTbody = document.querySelector('.wage-detail tbody')
-function buildDetail(id_staff) {
+async function buildDetail(id_staff) {
   contentWage.classList.add('hide')
   wageDetail.classList.remove('hide')
-  const staff = SALARY.find((st) => {
+
+  const salarys = (await fetch(SALARY_API)).json()
+
+  const staff = salarys.find((st) => {
     return st.id_staff == id_staff
   })
 
@@ -22,7 +27,6 @@ function buildDetail(id_staff) {
     }
   })
 }
-
 
 function formatTime(date_time) {
   date_time = date_time.split('-')

@@ -62,21 +62,48 @@ async function showFood(typeFoodId) {
   });
 }
 
+// Hàm cộng dồn số lượng món ăn vào object
+const getTotalFoods = (foods_before, foods_after) => {
+  const totalFoods = {}; // Tạo object mới để reset mỗi lần gọi hàm
+
+  const addToTotal = (foods) => {
+    foods.forEach(item => {
+      if (totalFoods[item.id_food]) {
+        totalFoods[item.id_food] += item.quantity;
+      } else {
+        totalFoods[item.id_food] = item.quantity;
+      }
+    });
+  };
+
+  // Gộp số lượng từ cả 2 danh sách
+  addToTotal(foods_before);
+  addToTotal(foods_after);
+
+  // Chuyển object về dạng mảng [{id_food, quantity}]
+  return Object.entries(totalFoods).map(([id_food, quantity]) => ({
+    id_food,
+    quantity
+  }));
+};
+
 // Hiển thị Hóa đơn của bàn
 async function setBill(getTable) {
-  const foodResponse = await fetch(FOOD_API)
-  const foods = await foodResponse.json()
+  const foodResponse = await fetch(FOOD_API);
+  const foods = await foodResponse.json();
 
-  const billPayItems = document.querySelector('.bill-pay_items')
+  const billPayItems = document.querySelector('.bill-pay_items');
   billPayItems.innerHTML = ''; // Xóa nội dung hiện tại
 
-  var sumTotal = 0;
-  getTable.food.map((e) => {
-    const foodUse = foods.find((element) => {
-      return e.id_food == element.id
-    });
-    // Tạo các phần tử DOM mới
+  // Lấy danh sách món ăn đã gộp tổng số lượng
+  const mergedFoods = getTotalFoods(getTable.foods_before, getTable.foods_after);
+
+  let sumTotal = 0;
+  mergedFoods.forEach((e) => {
+    const foodUse = foods.find((element) => element.id === e.id_food);
+
     if (foodUse) {
+      // Tạo phần tử DOM mới
       const billItemDiv = document.createElement('div');
       billItemDiv.className = 'bill-item';
 
@@ -103,6 +130,7 @@ async function setBill(getTable) {
       increaseButton.className = 'increase';
       increaseButton.textContent = '+';
       quantityDiv.appendChild(increaseButton);
+
       billItemDiv.appendChild(quantityDiv);
 
       const priceSpan = document.createElement('span');
@@ -111,24 +139,25 @@ async function setBill(getTable) {
       billItemDiv.appendChild(priceSpan);
 
       billPayItems.appendChild(billItemDiv);
+
       sumTotal += e.quantity * foodUse.price;
     }
   });
 
-  const total = document.querySelector('.total')
-  total.innerText = String(formatNumber(sumTotal));
+  // Cập nhật tổng tiền
+  const total = document.querySelector('.total');
+  total.innerText = formatNumber(sumTotal);
 }
+
 
 async function setBillFirst() {
   const tableResponse = await fetch(TABLE_API);
   const tables = await tableResponse.json();
 
   const idTable = localStorage.getItem('id_table');
-  const idTablePersen = JSON.parse(idTable);
   
-
   getTable = tables.find((t) => {
-    return t.id == idTablePersen
+    return t.id == idTable
   })
 
   setBill(getTable)
@@ -140,36 +169,20 @@ function formatNumber(number) {
   return number.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }).replace('₫', '');
 }
 
-// function addFoodToBill(id) {
-//   getBill.food.forEach((e) => {
-//     if (e.id_food === id) {
-//       e.quantity += 1;
-//       check = false;
-//     }
-//   });
-
-//   if (check) {
-//     getBill.food.push({
-//       id_food: id,
-//       quantity: 1
-//     });
-//   }
-
-//   setBill();
-// }
-
+// Cộng hoặc trừ món ăn trong bill
 async function reduceIncrease(foodId, calculation) {
-  const tableResponse = await fetch(TABLE_API);
-  const tables = await tableResponse.json();
-
   const idTable = localStorage.getItem('id_table');
-  const idTablePersen = JSON.parse(idTable);
   
-  getTable = tables.find((t) => {
-    return t.id == idTablePersen
-  })
+  const cachedTable = localStorage.getItem('cached_table');
+  if (cachedTable) {
+    getTable = JSON.parse(cachedTable);
+  } else {
+    const tableResponse = await fetch(TABLE_API);
+    const tables = await tableResponse.json();
+    getTable = tables.find((t) => t.id == idTable);
+  }
 
-  getTable.food.forEach((e) => {
+  getTable.foods_before.forEach((e) => {
     if (e.id_food === foodId) {
       if (calculation === 'reduce') {
         if (e.quantity > 1) {
@@ -187,58 +200,81 @@ async function reduceIncrease(foodId, calculation) {
     }
   })
 
-  console.log(getTable)
-  // updateTable(idTablePersen, getTable);
+  localStorage.setItem("cached_table", JSON.stringify(getTable))
+  // updateTable(idTable, getTable);
   setBill(getTable );
 }
 
+// Click nút Lưu để lưu dữ liệu
+const saveButton = document.querySelector('.save-button')
+saveButton.addEventListener('click', () => {
+  const idTable = localStorage.getItem('id_table');
+
+  const cachedTable = localStorage.getItem('cached_table');
+  if (cachedTable) {
+    const getTable = JSON.parse(cachedTable);
+    const dataTable = {
+      ...getTable,
+      "time_create": getTable.time_create != 0 ? getTable.time_create : Date.now(),
+    }
+    updateTable(idTable, dataTable);
+  }
+  window.location.href = "/src/NhanVien/Ban/index.html"
+})
+
+// Thêm món ăn vào bill
+async function addFoodToBill(id) {
+  const idTable = localStorage.getItem('id_table');
+
+  const cachedTable = localStorage.getItem('cached_table');
+  if (cachedTable) {
+    getTable = JSON.parse(cachedTable);
+  } else {
+    const tableResponse = await fetch(TABLE_API);
+    const tables = await tableResponse.json();
+    getTable = tables.find((t) => t.id == idTable);
+  }
+  
+  var check = false
+  getTable.foods_before.map((e) => {
+    if (e.id_food === id) {
+      e.quantity += 1;
+      check = true;
+    }
+  });
+
+  if (!check) {
+    getTable.foods_before.push({
+      id_food: id,
+      quantity: 1
+    });
+  }
+  localStorage.setItem("cached_table", JSON.stringify(getTable))
+  setBill(getTable);
+}
+
+// Xử lý nút thanh toán
+const payEnd = document.querySelector('.pay-end')
+payEnd.addEventListener('click', async () => {
+  const idTable = localStorage.getItem('id_table');
+  const cachedTable = localStorage.getItem('cached_table');
+  if (cachedTable) {
+    getTable = JSON.parse(cachedTable);
+    localStorage.removeItem('cached_table');
+  }
+  else {
+    const tableResponse = await fetch(TABLE_API);
+    const tables = await tableResponse.json();
+    getTable = tables.find((t) => t.id == idTable);
+  }
+
+  getTable.foods_before = [];
+  getTable.foods_after = [];
+  updateTable(idTable, getTable);
+  window.location.href = "/src/NhanVien/Ban/index.html"
+})
 
 
-
-
-// const payEnd = document.querySelector('.pay-end')
-
-// payEnd.addEventListener('click', () => {
-//   getBill.food = []
-//   TABLE.map((TB) => {
-//     if (TB.id === idTablePersen.getId) {
-//       TB = getBill
-//     }
-//   })
-//   var KITCHEN = JSON.parse(localStorage.getItem('KITCHEN'))
-//   KITCHEN = KITCHEN.filter(i => {
-//     return i.table_id !== idTablePersen.getId
-//   })
-//   var jsonKitchen = JSON.stringify(KITCHEN)
-//   localStorage.setItem('KITCHEN', jsonKitchen)
-//   var TABLE_INIT = JSON.parse(localStorage.getItem('TABLE_INIT'))
-//   var jsonTableAfter = JSON.stringify(TABLE_INIT)
-//   localStorage.setItem('TABLE_AFTER', jsonTableAfter)
-//   var jsonTable = JSON.stringify(TABLE)
-//   localStorage.setItem('TABLE', jsonTable)
-//   updateTableDataOnServer(getBill)
-// })
-
-// const saveButton = document.querySelector('.save-button')
-// saveButton.addEventListener('click', () => {
-//   TABLE.map((TB) => {
-//     if (TB.id === idTablePersen.getId) {
-//       TB = getBill
-//     }
-//   })
-//   var jsonTable = JSON.stringify(TABLE)
-//   localStorage.setItem('TABLE', jsonTable)
-
-//   var table = JSON.parse(localStorage.getItem('TABLE'))
-//   const tableAfter = table.find(t => {
-//     return t.id == idTablePersen.getId
-//   })
-
-//   var jsonTableAfter = JSON.stringify(tableAfter)
-//   localStorage.setItem('TABLE_AFTER', jsonTableAfter)
-
-//   updateTableDataOnServer(getBill);
-// })
 
 // function startBill() {
 //   getFoodData()

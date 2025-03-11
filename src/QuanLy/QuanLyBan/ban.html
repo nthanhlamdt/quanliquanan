@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Nhân Viên</title>
+    <link rel="stylesheet" href="/fontawesome-free-6.5.2-web/css/all.min.css" />
+    <link rel="stylesheet" href="/shared/style.css" />
+    <link rel="stylesheet" href="ban.css" />
+    <script src="/shared/API.js"></script>
+    <script src="/shared/GetAPI.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-intro">
+        <span>VULAMSYNGUYEN</span>
+      </div>
+
+      <div class="header-infor">
+        <span class="header-infor_name"></span>
+        <div class="header-infor_avata">
+          <span>L</span>
+          <ul class="log-out hide">
+            <li>
+              <i class="fa-regular fa-user"></i>
+              <span>Profile</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-gear"></i>
+              <span>Settings</span>
+            </li>
+            <li class="select-logout">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              <span>Logout</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="menu">
+      <nav>
+        <li>
+          <a href="/src/QuanLy/BaoCaoThongKe/BaoCao.html">
+            <i class="fa-solid fa-chart-simple"></i>
+            Báo cáo thông kê
+          </a>
+        </li>
+
+        <li>
+          <a href="/src/QuanLy/Luong/Luong.html">
+            <i class="fa-solid fa-piggy-bank"></i>
+            Lương
+          </a>
+        </li>
+
+        <li>
+          <a href="/src/QuanLy/MonAn/MonAn.html">
+            <i class="fa-solid fa-bowl-food"></i>
+            Món ăn
+          </a>
+        </li>
+
+        <li>
+          <a href="/src/QuanLy/NhanVien/NhanVien.html">
+            <i class="fa-solid fa-circle-user"></i>
+            Nhân viên
+          </a>
+        </li>
+
+        <li>
+          <a href="/src/QuanLy/TaiKhoan/TaiKhoan.html">
+            <i class="fa-solid fa-user-group"></i>
+            Tài khoản
+          </a>
+        </li>
+
+        <li></li>
+
+        <li>
+          <a href="/src/QuanLy/DanhMucMonAn/Danhmucmonan.html">
+            <i class="fa-solid fa-utensils"></i>
+            Danh Mục Món Ăn
+          </a>
+        </li>
+
+        <li style="background-color: #f4a261">
+          <a style="color: white" href="/src/QuanLy/Quanlyban/ban.html">
+            <i class="fa-solid fa-table"></i>
+            Bàn
+          </a>
+        </li>
+      </nav>
+    </div>
+    <div class="main">
+      <div class="content">
+        <h1 class="name-content">Bàn</h1>
+        <div class="staff">
+          <div class="btn-create_staff">
+            <button>Thêm Bàn +</button>
+          </div>
+        </div>
+      <div class="wrapper-table">
+        <div class="order-table">
+          <img src="img/dining-table.png" class="img-table" alt="">
+          <a href="#" class="table-number">Bàn 1</a>
+        </div>
+        <div class="order-table">
+          <img src="img/dining-table.png" class="img-table" alt="">
+          <a href="#" class="table-number">Bàn 2</a>
+        </div>
+        <div class="order-table" id="ban3">
+          <img src="img/dining-table.png" class="img-table" alt="">
+          <a href="#" class="table-number">Bàn 3</a>
+        </div>
+        <div class="order-table">
+          <img src="img/dining-table.png" class="img-table" alt="">
+          <a href="#" class="table-number">Bàn 4</a>
+        </div>
+        <div class="order-table" id="ban5">
+          <img src="img/dining-table.png" class="img-table" alt="">
+          <a href="#" class="table-number">Bàn 5</a>
+        </div>
+        <div class="order-table">
+          <img src="img/dining-table.png" class="img-table" alt="">
+          <a href="#" class="table-number">Bàn 6</a>
+        </div>
+        <div class="order-table">
+          <img src="img/dining-table.png" class="img-table" alt="">
+          <a href="#" class="table-number">Bàn 6</a>
+        </div>
+        <div class="order-table">
+          <img src="img/dining-table.png" class="img-table" alt="">
+          <a href="#" class="table-number">Bàn 6</a>
+        </div>
+        <div class="order-table">
+          <img src="img/dining-table.png" class="img-table" alt="">
+          <a href="#" class="table-number">Bàn 6</a>
+        </div>
+        <div class="order-table">
+          <img src="img/dining-table.png" class="img-table" alt="">
+          <a href="#" class="table-number">Bàn 6</a>
+        </div>
+        <div class="order-table">
+          <img src="img/dining-table.png" class="img-table" alt="">
+          <a href="#" class="table-number">Bàn 6</a>
+        </div>
+      </div>
+
+
+      </div>
+    </div>
+    </div>
+    <script src="/shared/main.js"></script>
+    <script src="./NhanVien.js"></script>
+  </body>
+</html>

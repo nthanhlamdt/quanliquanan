@@ -14,12 +14,14 @@
   font-size: 24px;
 }
 
-.company-content input {
+input {
   margin-top: 40px;
   width: 400px;
   height: 30px;
-  padding: 0px 10px;
+  padding: 20px 20px;
   font-size: 20px;
+  outline: none;
+  border-radius: 10px;
 }
 
 .company button {
@@ -38,14 +40,6 @@
   align-items: center;
   justify-content: center;
   margin-top: 150px;
-}
-
-.company-present input {
-  margin-top: 40px;
-  width: 400px;
-  height: 30px;
-  padding: 0px 10px;
-  font-size: 20px;
 }
 
 .company-present p {

@@ -51,7 +51,11 @@
   display: none;
 }
 
-
-
+.create-bill {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Hóa Đơn */

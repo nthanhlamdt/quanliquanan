@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Báo Cáo Thống Kê</title>
+    <link rel="stylesheet" href="/fontawesome-free-6.5.2-web/css/all.min.css" />
+    <link rel="stylesheet" href="/shared/style.css" />
+    <link rel="stylesheet" href="./Danhmucmonan.css" />
+    <script src="/shared/API.js"></script>
+    <script src="/shared/GetAPI.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-intro">
+        <span>VULAMSYNGUYEN</span>
+      </div>
+
+      <div class="header-infor">
+        <span class="header-infor_name"></span>
+        <div class="header-infor_avata">
+          <span>L</span>
+          <ul class="log-out hide">
+            <li>
+              <i class="fa-regular fa-user"></i>
+              <span>Profile</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-gear"></i>
+              <span>Settings</span>
+            </li>
+            <li class="select-logout">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              <span>Logout</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="menu">
+        <nav>
+          <li>
+            <a href="/src/QuanLy/BaoCaoThongKe/BaoCao.html">
+              <i class="fa-solid fa-chart-simple"></i>
+              Báo cáo thông kê
+            </a>
+          </li>
+
+          <li>
+            <a href="/src/QuanLy/Luong/Luong.html">
+              <i class="fa-solid fa-piggy-bank"></i>
+              Lương
+            </a>
+          </li>
+
+          <li>
+            <a href="/src/QuanLy/MonAn/MonAn.html">
+              <i class="fa-solid fa-bowl-food"></i>
+              Món ăn
+            </a>
+          </li>
+
+          <li>
+            <a href="/src/QuanLy/NhanVien/NhanVien.html">
+              <i class="fa-solid fa-circle-user"></i>
+              Nhân viên
+            </a>
+          </li>
+
+          <li>
+            <a href="/src/QuanLy/TaiKhoan/TaiKhoan.html">
+              <i class="fa-solid fa-user-group"></i>
+              Tài khoản
+            </a>
+          </li>
+
+          <li style="background-color: #f4a261">
+            <a
+              style="color: white"
+              href="/src/QuanLy/DanhMucMonAn/Danhmucmonan.html"
+            >
+              <i class="fa-solid fa-utensils"></i>
+              Danh Mục Món Ăn
+            </a>
+          </li>
+
+          <li>
+            <a href="/src/QuanLy/Quanlyban/ban.html">
+              <i class="fa-solid fa-table"></i>
+              Bàn
+            </a>
+          </li>
+        </nav>
+      </div>
+      <!--  ======================================Main====================================== -->
+      <div class="main">
+        <div class="content">
+          <h1 class="name-content">Thực đơn món ăn</h1>
+          <table>
+            <td
+              colspan="4"
+              style="text-align: center; background-color: #f4a261; color: white"
+              class="td-sp"
+            >
+              Thực đơn 1
+            </td>
+            <tr>
+              <td>Súp hải sản</td>
+              <td>250.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Salad hoàng đế</td>
+              <td>300.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Nem nướng</td>
+              <td>100.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Tôm càng nướng mọi</td>
+              <td>300.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Bò lagu kèm bánh mì</td>
+              <td>350.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Trái cây</td>
+              <td>100.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+
+          </table>
+          <table>
+            <td
+              colspan="4"
+              style="text-align: center; background-color: #f4a261; color: white"
+              class="td-sp"
+            >
+              Thực đơn 2
+            </td>
+            <tr>
+              <td>Súp hải sản</td>
+              <td>250.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Salad hoàng đế</td>
+              <td>300.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Nem nướng</td>
+              <td>100.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Tôm càng nướng mọi</td>
+              <td>300.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Bò lagu kèm bánh mì</td>
+              <td>350.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Trái cây</td>
+              <td>100.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+
+          </table>
+          <table>
+            <td
+              colspan="4"
+              style="text-align: center; background-color: #f4a261; color: white"
+              class="td-sp"
+            >
+              Thực đơn 3
+            </td>
+            <tr>
+              <td>Súp hải sản</td>
+              <td>250.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Salad hoàng đế</td>
+              <td>300.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Nem nướng</td>
+              <td>100.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Tôm càng nướng mọi</td>
+              <td>300.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Bò lagu kèm bánh mì</td>
+              <td>350.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+              <td>Trái cây</td>
+              <td>100.000</td>
+              <td><i class="fa-solid fa-pen-to-square"></i></td>
+              <td><i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+
+          </table>
+
+        </div>
+      </div>
+      <button class="add" style="cursor: pointer">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+    <script src="/shared/main.js"></script>
+    <!-- <script src="Danhmucmonan.js"></script> -->
+  </body>
+</html>

@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chấm Công</title>
+  <title>Bếp</title>
   <link rel="stylesheet" href="/fontawesome-free-6.5.2-web/css/all.min.css">
+  <link rel="stylesheet" href="./Bep.css">
   <link rel="stylesheet" href="/shared/style.css">
-  <link rel="stylesheet" href="ChamCong.css">
-
+  
 </head>
 
 <body>
@@ -39,36 +39,55 @@
       </div>
     </div>
   </div>
+
   <div class="container">
     <div class="menu">
-     <!-- Get từ /shared/reloadNavbarUserLoad.js-->
+      <nav>
+        <li style="background-color: rgb(68, 68, 160); ">
+          <a style="color: white;" href="/src/NhanVien/Bep/">
+            <i class="fa-solid fa-kitchen-set"></i>
+            Bếp
+          </a>
+        </li>
+
+        <li>
+          <a href="/src/NhanVienBep/Kho/">
+            <i class="fa-solid fa-boxes-stacked"></i>
+            Kho
+          </a>
+        </li>
+
+        <li>
+          <a href="/src/NhanVien/LichSuDon/">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            Lịch sử đơn
+          </a>
+        </li>
+
+        <li>
+          <a href="/src/NhanVien/ChamCong/">
+            <i class="fa-solid fa-money-check-dollar"></i>
+            Chấm công
+          </a>
+        </li>
+      </nav>
     </div>
 
     <div class="main">
       <div class="content">
-        <h1 class="name-content">Chấm công</h1>
-        <div class="company">
-          <div class="company-content ">
-            <h1>VUI LÒNG NHẬP MÃ CHẤM CÔNG</h1>
-            <input class="code-start-attendance" type="text" placeholder="Mã chấm công" name="" id="codeCompany">
-            <button class="btnStartAttendance">Chấm công</button>
-          </div>
-          <div class="company-present hide">
-            <p>Xin Chào 
-              <strong>Ngô Thành Lâm</strong> 
-              Thời gian làm việc hiện tại của bạn là 
-              <span class="work-timer">1 giờ 00 phút</span>
-            </p>
-            <h1>VUI LÒNG NHẬP MÃ ĐỂ KẾT THÚC</h1>
-            <button class="btnEndAttendance">Kết thúc chấm công</button>
-          </div>
+        <div class="kitchen">
+          <h1 class="name-content">Bếp</h1>
+          <ul class="list-order">
+            <!--Gọi từ BepAPI  -->
+          </ul>
         </div>
       </div>
     </div>
   </div>
+  
   <script src="/shared/main.js"></script>
-  <script src="/shared/reloadNavbarUserLoad.js"></script>
-  <script src="./ChamCong.js"></script>
+  <script src="Bep.js"></script>
+  <script src="API.js"></script>
 </body>
 
 </html>

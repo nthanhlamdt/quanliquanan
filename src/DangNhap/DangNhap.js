@@ -17,27 +17,23 @@ async function login() {
       .then(response => response.json())
       .catch(error => console.error('Có lỗi xảy ra:', error))
 
-    // Gọi API lấy danh sách nhân viên
-    const staffResponse = await fetch(STAFF_API)
-    const staff = await staffResponse.json()
-
     // Tìm user trong danh sách account
     const account = accounts.find(acc => acc.email === username.value && acc.password === password.value)
 
     if (account) {
-      // Tìm thông tin nhân viên của user đó
-      const user = staff.find(sf => sf.id === account.id_staff)
-      localStorage.setItem('user', JSON.stringify(user))
+      localStorage.setItem('user', JSON.stringify(account))
       
       // Điều hướng dựa trên chức vụ
-      if (user.ChucVu === 'Quản Lí') {
+      if (account.ChucVu === 'Quản Lí') {
         window.location.href = '/src/QuanLy/BaoCaoThongKe/BaoCao.html'
+      } else if (account.ChucVu === 'Nhân Viên Bếp') {
+        window.location.href = '/src/NhanVienBep/Bep/index.html'
       } else {
-        window.location.href = '/src/NhanVien/DonHang/index.html'
+        window.location.href = '/src/NhanVien/Ban/index.html'
       }
 
       alert('Đăng nhập thành công!')
-      alert('Chào mừng ' + user.HoTen + ' đến với hệ thống quản lý cửa hàng!')
+      alert('Chào mừng ' + account.HoTen + ' đến với hệ thống quản lý cửa hàng!')
     } else {
       // Xử lý lỗi nhập sai
       if (!username.value && !password.value) {
@@ -76,9 +72,9 @@ password.addEventListener('keypress', handleKeyPress)
 document.addEventListener("DOMContentLoaded", function () {
   const user = JSON.parse(localStorage.getItem("user"))
   if (user) {
-    user.ChucVu === "Nhân Viên Phục Vụ"
-    ? (window.location.href = "/src/NhanVien/DonHang/index.html")
-    : window.location.href = "/src/QuanLy/BaoCaoThongKe/BaoCao.html"; 
+    if (user.ChucVu === "Nhân Viên Phục Vụ") window.location.href = "/src/NhanVien/Ban/index.html";
+    else if(user.ChucVu === "Nhân Viên Bếp") window.location.href = "/src/NhanVien/NhanVienBep/index.html"; 
+    else window.location.href = "/src/QuanLy/BaoCaoThongKe/BaoCao.html"; 
   }
 });
 

@@ -6,16 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bàn</title>
   <link rel="stylesheet" href="/fontawesome-free-6.5.2-web/css/all.min.css">
-  <link rel="stylesheet" href="./Ban.css">
-  <link rel="stylesheet" href="./HoaDon.css">
+  <link rel="stylesheet" href="./DonHang.css">
   <link rel="stylesheet" href="/shared/style.css">
-  <script src="/shared/API.js"></script>
-  <script src="/shared/GetAPI.js"></script>
 </head>
 
 <body>
   <div class="header">
     <div class="header-intro">
+      <i class="fa-solid fa-bars"></i>
       <span>VULAMSYNGUYEN</span>
     </div>
 
@@ -41,99 +39,93 @@
     </div>
   </div>
 
-  <div class="menu">
-    <nav>
-      <li>
-        <a  href="/src/NhanVien/DonHang/index.html">
-          <i class="fa-solid fa-table"></i>
-          Bàn
-        </a>
-      </li>
+  <div class="container">
+    <div class="menu">
+      <nav>
+        <li>
+          <a  href="/src/NhanVien/Ban/index.html">
+            <i class="fa-solid fa-table"></i>
+            Bàn
+          </a>
+        </li>
 
-      <li style="background-color: rgb(68, 68, 160); ">
-        <a style="color: white;" href="/src/NhanVien/DonDatHang/index.html">
-          <i class="fa-solid fa-bag-shopping"></i>
-          Đơn hàng
-        </a>
-      </li>
+        <li style="background-color: rgb(68, 68, 160); ">
+          <a style="color: white;" href="/src/NhanVien/DonDatHang/index.html">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Đơn hàng
+          </a>
+        </li>
 
-      <li>
-        <a href="/src/NhanVien/Bep/index.html">
-          <i class="fa-solid fa-kitchen-set"></i>
-          Bếp
-        </a>
-      </li>
+        <li>
+          <a href="/src/NhanVien/LichSuDon/index.html">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            Lịch sử đơn
+          </a>
+        </li>
 
-      <li>
-        <a href="/src/NhanVien/LichSuDon/index.html">
-          <i class="fa-solid fa-clock-rotate-left"></i>
-          Lịch sử đơn
-        </a>
-      </li>
+        <li>
+          <a href="/src/NhanVien/ChamCong/">
+            <i class="fa-solid fa-money-check-dollar"></i>
+            Chấm công
+          </a>
+        </li>
+      </nav>
+    </div>
 
-      <li>
-        <a href="/src/NhanVien/ChamCong/">
-          <i class="fa-solid fa-money-check-dollar"></i>
-          Chấm công
-        </a>
-      </li>
-    </nav>
-  </div>
-
-  <div class="main">
-    <div class="content">
-
-      <div class="table-list">
-        <h1 class="name-content">Bàn</h1>
-        <div class="content-main">
-          <!-- TABLE ADD IN DATBAN.JS -->
-          <div onclick="addBill()" class="create-bill table table-empty">
-            +
+    <div class="main">
+      <div class="content">
+        <div class="table-list">
+          <h1 class="name-content">Đơn hàng</h1>
+          <div class="content-main">
+            <!-- TABLE ADD IN DATBAN.JS -->
+            <div class="create-bill table table-empty">
+              <p>+</p>
+            </div>
           </div>
+          
         </div>
-        
-      </div>
 
-      <div class="order hide">
-        <h1 class="name-content"> Hóa đơn</h1>
+        <div class="order hide">
+          <h1 class="name-content"> Hóa đơn</h1>
 
-        <div class="bill">
-          <div class="bill-content">
-            <nav class="bill-menu">
-              <li id="bill-menu-first" style="background-color: rgb(68, 68, 160); color: white;">Ốc
-              </li>
-              <li>Lẩu</li>
-              <li>Nướng</li>
-              <li>Đồ uống</li>
-              <li>Combo</li>
+          <div class="bill">
+            <div class="bill-content">
+              <nav class="bill-menu">
+                <li id="bill-menu-first" style="background-color: rgb(68, 68, 160); color: white;">Ốc
+                </li>
+                <li>Lẩu</li>
+                <li>Nướng</li>
+                <li>Đồ uống</li>
+                <li>Combo</li>
 
-            </nav>
+              </nav>
 
-            <nav class="bill-menu_list">
-              <li class="bill-menu_iteam">
-                <!-- <img src="./img/img-1.jpg" alt=""> -->
-                <span>Ốc hương xào bơ</span>
-              </li>
-            </nav>
-          </div>
-
-          <div class="bill-pay">
-            <div class="bill-pay_header">
-              <span>Mặt hàng</span>
-              <span>Số lượng</span>
-              <span>Đơn giá</span>
+              <nav class="bill-menu_list">
+                <li class="bill-menu_iteam">
+                  <!-- <img src="./img/img-1.jpg" alt=""> -->
+                  <span>Ốc hương xào bơ</span>
+                </li>
+              </nav>
             </div>
 
-            <div class="bill-pay_items">
-              <!-- Số lượng giá mỗi hóa đơn -->
-            </div>
-            <div class="bill-pay_total">
-              <span>Thành tiền</span>
-              <span class="total">0đ</span>
-            </div>
-            <div class="bill-pay_button">
-              <button class="save-button">Lưu</button>
-              <button class="pay-end">Thanh Toán</button>
+            <div class="bill-pay">
+              <div class="bill-pay_header">
+                <span>Mặt hàng</span>
+                <span>Số lượng</span>
+                <span>Đơn giá</span>
+              </div>
+
+              <div class="bill-pay_items">
+                <!-- Số lượng giá mỗi hóa đơn -->
+              </div>
+              <div class="bill-pay_total">
+                <span>Thành tiền</span>
+                <span class="total">0đ</span>
+              </div>
+              <div class="bill-pay_button">
+                <button class="save-button">Lưu</button>
+                <button class="pay-end">Thanh Toán</button>
+              </div>
             </div>
           </div>
         </div>
@@ -141,11 +133,7 @@
     </div>
   </div>
 
-  <script src="./PhuongThuc.js"></script>
-  <script src="./HoaDon.js"></script>
-  <script src="./Ban.js"></script>
-  <script src="/src/NhanVien/Bep/func_getDataKitchenFromTable.js"></script>
-  <script src="/src/NhanVien/Bep/BepData.js"></script>
+  <script src="./DonHang.js"></script>
   <script src="/shared/main.js"></script>
 
 
