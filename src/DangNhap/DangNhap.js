@@ -7,6 +7,7 @@ const passwordError = document.getElementById('password-error')
 const ACCOUNT_API = 'http://localhost:3000/account'
 const STAFF_API = 'http://localhost:3000/staff'
 
+// Thực hiện khi click button Đăng Nhập
 async function login() {
   usernameError.textContent = ''
   passwordError.textContent = ''

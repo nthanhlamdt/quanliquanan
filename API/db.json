@@ -1,206 +1,289 @@
 {
-  "order": [
-    {
-      "id": "a8f3b2",
-      "nameTable": "Đơn #006",
-      "time_start": "10:32",
-      "food": [
-        {
-          "id_food": "x7d2c1",
-          "quantity": 1
-        },
-        {
-          "id_food": "y6e9a5",
-          "quantity": 1
-        },
-        {
-          "id_food": "z3b8e4",
-          "quantity": 1
-        },
-        {
-          "id_food": "w1f5g6",
-          "quantity": 1
-        }
-      ],
-      "quantitative": []
-    },
-    {
-      "id": "b9c7d4",
-      "nameTable": "Đơn #007",
-      "time_start": "10:33",
-      "food": [
-        {
-          "id_food": "x7d2c1",
-          "quantity": 1
-        }
-      ],
-      "quantitative": []
-    },
-    {
-      "id": "c6e8f1",
-      "nameTable": "Đơn #008",
-      "time_start": "10:34",
-      "food": [
-        {
-          "id_food": "x7d2c1",
-          "quantity": 1
-        }
-      ],
-      "quantitative": []
-    },
-    {
-      "id": "d5g3h9",
-      "nameTable": "Đơn #009",
-      "time_start": "10:37",
-      "food": [
-        {
-          "id_food": "x7d2c1",
-          "quantity": 1
-        }
-      ],
-      "quantitative": []
-    },
-    {
-      "id": "e2h4k7",
-      "nameTable": "Đơn #005",
-      "time_start": "00:14",
-      "food": [
-        {
-          "id_food": "x7d2c1",
-          "quantity": 1
-        },
-        {
-          "id_food": "y6e9a5",
-          "quantity": 1
-        }
-      ],
-      "quantitative": []
-    }
-  ],
   "salary": [
     {
-      "id_staff": "a7d9f1",
-      "detail": [
+      "id": "w2v3u4",
+      "id_account": "s1t2u3",
+      "coefficient": 20000,
+      "details": [
         {
-          "date_time": "2024-03-30",
-          "time_work": 300
+          "date_time": "2024-01-01",
+          "time_work": 300,
+          "time_start": 1741844018705
         },
         {
-          "date_time": "2024-03-31",
-          "time_work": 310
+          "date_time": "2024-01-10",
+          "time_work": 310,
+          "time_start": 1741944018705
         },
         {
-          "date_time": "2024-05-14",
-          "time_work": 100
+          "date_time": "2024-02-05",
+          "time_work": 320,
+          "time_start": 1742044018705
         },
         {
-          "date_time": "2024-05-14",
-          "time_work": 130
+          "date_time": "2024-02-20",
+          "time_work": 330,
+          "time_start": 1742144018705
         },
         {
-          "date_time": "2024-05-18",
-          "time_work": 40
+          "date_time": "2024-03-10",
+          "time_work": 340,
+          "time_start": 1742244018705
         },
         {
-          "date_time": "2024-05-31",
-          "time_work": 15687
-        }
-      ],
-      "id": "x1y2z3"
-    },
-    {
-      "id_staff": "b9c7d4",
-      "detail": [
-        {
-          "date_time": "2024-05-13",
-          "time_work": 300
+          "date_time": "2024-03-25",
+          "time_work": 350,
+          "time_start": 1742344018705
         },
         {
-          "date_time": "2024-05-15",
-          "time_work": 310
+          "date_time": "2024-04-01",
+          "time_work": 300,
+          "time_start": 1742444018705
         },
         {
-          "date_time": "2024-05-14",
-          "time_work": 100
-        },
-        {
-          "date_time": "2024-05-16",
-          "time_work": 200
-        },
-        {
-          "date_time": "2024-05-18",
-          "time_work": 40
-        }
-      ],
-      "id": "w2v3u4"
-    },
-    {
-      "id_staff": "c6e8f1",
-      "detail": [
-        {
-          "date_time": "2024-04-13",
-          "time_work": 300
-        },
-        {
-          "date_time": "2024-04-15",
-          "time_work": 310
-        },
-        {
-          "date_time": "2024-04-14",
-          "time_work": 100
-        },
-        {
-          "date_time": "2024-04-16",
-          "time_work": 200
-        },
-        {
-          "date_time": "2024-04-18",
-          "time_work": 40
-        },
-        {
-          "date_time": "2024-06-08",
-          "time_work": 813
-        },
-        {
-          "date_time": "2024-06-08",
-          "time_work": 789
-        }
-      ],
-      "id": "t6d5e4"
-    },
-    {
-      "id_staff": "d5g3h9",
-      "detail": [
-        {
-          "date_time": "2024-04-13",
-          "time_work": 300
-        },
-        {
-          "date_time": "2024-04-15",
-          "time_work": 310
-        },
-        {
-          "date_time": "2024-04-14",
-          "time_work": 100
-        },
-        {
-          "date_time": "2024-04-16",
-          "time_work": 200
-        },
-        {
-          "date_time": "2024-04-18",
-          "time_work": 40
-        },
-        {
-          "date_time": "2024-04-19",
-          "time_work": 300
+          "date_time": "2024-04-12",
+          "time_work": 310,
+          "time_start": 1742544018705
         },
         {
           "date_time": "2024-05-01",
-          "time_work": 200
+          "time_work": 320,
+          "time_start": 1742644018705
+        },
+        {
+          "date_time": "2024-05-15",
+          "time_work": 330,
+          "time_start": 1742744018705
         }
-      ],
-      "id": "e2h4k7"
+      ]
+    },
+    {
+      "id": "x3y4z5",
+      "id_account": "v4w5x6",
+      "coefficient": 18000,
+      "details": [
+        {
+          "date_time": "2024-01-05",
+          "time_work": 320,
+          "time_start": 1741844018705
+        },
+        {
+          "date_time": "2024-01-15",
+          "time_work": 330,
+          "time_start": 1741944018705
+        },
+        {
+          "date_time": "2024-02-01",
+          "time_work": 350,
+          "time_start": 1742044018705
+        },
+        {
+          "date_time": "2024-02-22",
+          "time_work": 300,
+          "time_start": 1742144018705
+        },
+        {
+          "date_time": "2024-03-10",
+          "time_work": 280,
+          "time_start": 1742244018705
+        },
+        {
+          "date_time": "2024-03-15",
+          "time_work": 310,
+          "time_start": 1742344018705
+        },
+        {
+          "date_time": "2024-04-01",
+          "time_work": 330,
+          "time_start": 1742444018705
+        },
+        {
+          "date_time": "2024-04-20",
+          "time_work": 320,
+          "time_start": 1742544018705
+        },
+        {
+          "date_time": "2024-05-05",
+          "time_work": 350,
+          "time_start": 1742644018705
+        },
+        {
+          "date_time": "2024-05-20",
+          "time_work": 300,
+          "time_start": 1742744018705
+        }
+      ]
+    },
+    {
+      "id": "y6w7x8",
+      "id_account": "a7b8c9",
+      "coefficient": 15000,
+      "details": [
+        {
+          "date_time": "2024-01-10",
+          "time_work": 250,
+          "time_start": 1741844018705
+        },
+        {
+          "date_time": "2024-01-25",
+          "time_work": 260,
+          "time_start": 1741944018705
+        },
+        {
+          "date_time": "2024-02-05",
+          "time_work": 270,
+          "time_start": 1742044018705
+        },
+        {
+          "date_time": "2024-02-15",
+          "time_work": 280,
+          "time_start": 1742144018705
+        },
+        {
+          "date_time": "2024-03-01",
+          "time_work": 200,
+          "time_start": 1742244018705
+        },
+        {
+          "date_time": "2024-03-20",
+          "time_work": 230,
+          "time_start": 1742344018705
+        },
+        {
+          "date_time": "2024-04-01",
+          "time_work": 250,
+          "time_start": 1742444018705
+        },
+        {
+          "date_time": "2024-04-15",
+          "time_work": 260,
+          "time_start": 1742544018705
+        },
+        {
+          "date_time": "2024-05-10",
+          "time_work": 270,
+          "time_start": 1742644018705
+        },
+        {
+          "date_time": "2024-05-25",
+          "time_work": 280,
+          "time_start": 1742744018705
+        }
+      ]
+    },
+    {
+      "id": "p8o9q1",
+      "id_account": "m1n2h3",
+      "coefficient": 21000,
+      "details": [
+        {
+          "date_time": "2024-01-01",
+          "time_work": 330,
+          "time_start": 1741844018705
+        },
+        {
+          "date_time": "2024-01-20",
+          "time_work": 340,
+          "time_start": 1741944018705
+        },
+        {
+          "date_time": "2024-02-05",
+          "time_work": 350,
+          "time_start": 1742044018705
+        },
+        {
+          "date_time": "2024-02-20",
+          "time_work": 330,
+          "time_start": 1742144018705
+        },
+        {
+          "date_time": "2024-03-10",
+          "time_work": 320,
+          "time_start": 1742244018705
+        },
+        {
+          "date_time": "2024-03-25",
+          "time_work": 330,
+          "time_start": 1742344018705
+        },
+        {
+          "date_time": "2024-04-01",
+          "time_work": 340,
+          "time_start": 1742444018705
+        },
+        {
+          "date_time": "2024-04-10",
+          "time_work": 330,
+          "time_start": 1742544018705
+        },
+        {
+          "date_time": "2024-05-01",
+          "time_work": 310,
+          "time_start": 1742644018705
+        },
+        {
+          "date_time": "2024-05-15",
+          "time_work": 320,
+          "time_start": 1742744018705
+        }
+      ]
+    },
+    {
+      "id": "z1v2x3",
+      "id_account": "l4a5n6",
+      "coefficient": 16000,
+      "details": [
+        {
+          "date_time": "2024-01-05",
+          "time_work": 280,
+          "time_start": 1741844018705
+        },
+        {
+          "date_time": "2024-01-15",
+          "time_work": 290,
+          "time_start": 1741944018705
+        },
+        {
+          "date_time": "2024-02-01",
+          "time_work": 300,
+          "time_start": 1742044018705
+        },
+        {
+          "date_time": "2024-02-18",
+          "time_work": 310,
+          "time_start": 1742144018705
+        },
+        {
+          "date_time": "2024-03-05",
+          "time_work": 320,
+          "time_start": 1742244018705
+        },
+        {
+          "date_time": "2024-03-20",
+          "time_work": 330,
+          "time_start": 1742344018705
+        },
+        {
+          "date_time": "2024-04-01",
+          "time_work": 340,
+          "time_start": 1742444018705
+        },
+        {
+          "date_time": "2024-04-15",
+          "time_work": 350,
+          "time_start": 1742544018705
+        },
+        {
+          "date_time": "2024-05-10",
+          "time_work": 360,
+          "time_start": 1742644018705
+        },
+        {
+          "date_time": "2024-05-25",
+          "time_work": 370,
+          "time_start": 1742744018705
+        }
+      ]
     }
   ],
   "warehouse": [
@@ -281,10 +364,31 @@
       "id": "v4w5x6"
     },
     {
-      "email": "vuducnguyen@gmail.com",
-      "password": "vuducnguyen",
-      "id_staff": "d5g3h9",
-      "id": "y7z8a9"
+      "email": "ngocanhnv@gmail.com",
+      "password": "ngocanhnv123",
+      "HoTen": "Ngô Cẩm Anh",
+      "ChucVu": "Nhân Viên Lễ Tân",
+      "GioiTinh": "Nữ",
+      "SoDienThoai": "0398746582",
+      "id": "a7b8c9"
+    },
+    {
+      "email": "hoangminh@gmail.com",
+      "password": "hoangminh2025",
+      "HoTen": "Hoàng Minh",
+      "ChucVu": "Nhân Viên Bếp",
+      "GioiTinh": "Nam",
+      "SoDienThoai": "0347568921",
+      "id": "m1n2h3"
+    },
+    {
+      "email": "lanngoc@gmail.com",
+      "password": "lanngoc2025",
+      "HoTen": "Lâm Ngọc",
+      "ChucVu": "Nhân Viên Phục Vụ",
+      "GioiTinh": "Nữ",
+      "SoDienThoai": "0397654321",
+      "id": "l4a5n6"
     }
   ],
   "food": [
@@ -484,32 +588,10 @@
       "id": "a1b2c3",
       "nameTable": "Bàn 1",
       "status": false,
-      "foods_before": [
-        {
-          "id_food": "q7r8s9",
-          "quantity": 1
-        },
-        {
-          "id_food": "a1b2c3",
-          "quantity": 1
-        }
-      ],
-      "foods_after": [
-        {
-          "id_food": "g7h8i9",
-          "quantity": 10
-        },
-        {
-          "id_food": "a1b2c3",
-          "quantity": 2
-        },
-        {
-          "id_food": "d4e5f6",
-          "quantity": 2
-        }
-      ],
+      "foods_before": [],
+      "foods_after": [],
       "quantitative": [],
-      "time_create": 1741604635232,
+      "time_create": 0,
       "time_update": 0
     },
     {
@@ -524,33 +606,23 @@
         {
           "id_food": "d4e5f6",
           "quantity": 1
-        }
-      ],
-      "foods_after": [
+        },
         {
           "id_food": "g7h8i9",
-          "quantity": 1
+          "quantity": 2
         }
       ],
-      "time_create": 1741604746236,
+      "foods_after": [],
+      "time_create": 1741844026186,
       "time_update": 0
     },
     {
       "id": "g7h8i9",
       "nameTable": "Bàn 3",
       "status": false,
-      "foods_before": [
-        {
-          "id_food": "d4e5f6",
-          "quantity": 1
-        },
-        {
-          "id_food": "a1b2c3",
-          "quantity": 1
-        }
-      ],
+      "foods_before": [],
       "foods_after": [],
-      "time_create": 1741605401928,
+      "time_create": 0,
       "time_update": 0
     },
     {
@@ -758,11 +830,86 @@
   "history": [
     {
       "id": "1s45s2",
-      "time_start": 0,
-      "time_end": 0,
+      "time_start": 1742010088713,
+      "time_end": 1742010093598,
       "total": 200000,
       "type": "table",
       "id_type": "l3m4n5"
+    },
+    {
+      "id": "1627",
+      "time_start": 1741844018705,
+      "time_end": 1742012840387,
+      "total": 290000,
+      "type": "table",
+      "id_type": "a1b2c3"
+    },
+    {
+      "id": "f77c",
+      "time_start": 1742010088713,
+      "time_end": 1742012924231,
+      "total": 45000,
+      "type": "order",
+      "id_type": "si2dkn"
+    }
+  ],
+  "order": [
+    {
+      "id": "si2dkn",
+      "nameTable": "Đơn #001",
+      "status": false,
+      "foods_before": [],
+      "foods_after": [],
+      "quantitative": [],
+      "time_create": 0,
+      "time_update": 0,
+      "success": true
+    },
+    {
+      "id": "afcgbj",
+      "nameTable": "Đơn #002",
+      "status": false,
+      "foods_before": [],
+      "foods_after": [],
+      "quantitative": [],
+      "time_create": 1742010093598,
+      "time_update": 0,
+      "success": false
+    },
+    {
+      "id": "5de6tk",
+      "nameTable": "Đơn #002",
+      "status": false,
+      "foods_before": [],
+      "foods_after": [],
+      "quantitative": [],
+      "time_create": 1742010096591,
+      "time_update": 0,
+      "success": false
+    },
+    {
+      "id": "59kd4p",
+      "nameTable": "Đơn #002",
+      "status": true,
+      "foods_before": [
+        {
+          "id_food": "a1b2c3",
+          "quantity": 1
+        },
+        {
+          "id_food": "d4e5f6",
+          "quantity": 1
+        },
+        {
+          "id_food": "g7h8i9",
+          "quantity": 1
+        }
+      ],
+      "foods_after": [],
+      "quantitative": [],
+      "time_create": 1742010103823,
+      "time_update": 0,
+      "success": true
     }
   ]
 }

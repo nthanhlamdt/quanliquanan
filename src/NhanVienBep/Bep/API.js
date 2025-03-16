@@ -1,5 +1,5 @@
-const updateKitchenDelivered = async (kitchenData, idKitchen) =>
-  await fetch(`${TABLE_API}/${idKitchen}`, {
+const updateKitchenDelivered = async (kitchenData, idKitchen, API) =>
+  await fetch(`${API}/${idKitchen}`, {
     method: "PATCH", // Dùng PATCH thay vì PUT để cập nhật 1 phần dữ liệu
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

@@ -27,7 +27,7 @@ selectLogout.addEventListener('click', () => {
   window.location.href = '/src/DangNhap/DangNhap.html';
 })
 
-const generateUniqueID = (length = 6) => {
+const generateUniqueID = (length = 10) => {
   const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
   let result = "";
   for (let i = 0; i < length; i++) {
@@ -50,3 +50,38 @@ window.addEventListener("resize", () => {
     menu.classList.remove("menu-open");
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Lấy thông tin người dùng từ localStorage
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  // Kiểm tra nếu không có user, chuyển hướng về trang đăng nhập
+  if (!user) {
+    window.location.href = "/src/DangNhap/DangNhap.html";
+    return;
+  }
+  else {
+    if (user.ChucVu == 'Quản Lí' && !window.location.pathname.includes("/src/QuanLy/")) {
+      window.location.href = "/src/QuanLy/BaoCaoThongKe/BaoCao.html";
+    }
+    else if (user.ChucVu == 'Nhân Viên Phục Vụ'
+      && !window.location.pathname.includes("/src/NhanVien/")
+    ) {
+      window.location.href = "/src/NhanVien/Ban";
+    }
+    else if (
+      user.ChucVu == 'Nhân Viên Bếp'
+      && !window.location.pathname.includes("/src/NhanVienBep/")
+      && !window.location.pathname.includes("/src/NhanVien/LichSuDon")
+      && !window.location.pathname.includes("/src/NhanVien/ChamCong")
+      && window.location.pathname.includes("/src/QuanLy/")
+    ) {
+      window.location.href = "/src/NhanVienBep/Bep";
+    }
+  }
+})
+
+// Hàm thêm .000 vào số tiền
+function formatNumber(number) {
+  return number.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }).replace('₫', '');
+}

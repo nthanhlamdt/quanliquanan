@@ -1,5 +1,7 @@
 const TYPE_FOOD_API = 'http://localhost:3000/typeFood';
 const FOOD_API = 'http://localhost:3000/food';
+const ORDER_API = 'http://localhost:3000/order';
+const TABLE_API = 'http://localhost:3000/table';
 
 // Lấy danh sách loại món ăn
 async function getTypeFoodData() {
@@ -87,6 +89,8 @@ const getTotalFoods = (foods_before, foods_after) => {
   }));
 };
 
+
+let sumTotal = 0;
 // Hiển thị Hóa đơn của bàn
 async function setBill(getTable) {
   const foodResponse = await fetch(FOOD_API);
@@ -98,7 +102,6 @@ async function setBill(getTable) {
   // Lấy danh sách món ăn đã gộp tổng số lượng
   const mergedFoods = getTotalFoods(getTable.foods_before, getTable.foods_after);
 
-  let sumTotal = 0;
   mergedFoods.forEach((e) => {
     const foodUse = foods.find((element) => element.id === e.id_food);
 
@@ -154,32 +157,43 @@ async function setBillFirst() {
   const tableResponse = await fetch(TABLE_API);
   const tables = await tableResponse.json();
 
-  const idTable = localStorage.getItem('id_table');
-  
-  getTable = tables.find((t) => {
-    return t.id == idTable
-  })
+  localStorage.removeItem('cached_table');
 
-  setBill(getTable)
+  const orderResponse = await fetch(ORDER_API);
+  const orders = await orderResponse.json();
+
+  const objectID = JSON.parse(localStorage.getItem('id_table'))
+  
+  if (objectID.type == 'table') {
+    getTable = tables.find(table => {
+      return table.id == objectID.id
+    })
+    setBill(getTable)
+  }
+  else {
+    getOrder = orders.find(order => {
+      return order.id == objectID.id
+    })
+    setBill(getOrder)
+  }
 }
 setBillFirst()
 
-// Hàm thêm .000 vào số tiền
-function formatNumber(number) {
-  return number.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }).replace('₫', '');
-}
-
 // Cộng hoặc trừ món ăn trong bill
 async function reduceIncrease(foodId, calculation) {
-  const idTable = localStorage.getItem('id_table');
+  const objectID = JSON.parse(localStorage.getItem('id_table'))
   
   const cachedTable = localStorage.getItem('cached_table');
   if (cachedTable) {
     getTable = JSON.parse(cachedTable);
-  } else {
+  } else if(objectID.type == 'table'){
     const tableResponse = await fetch(TABLE_API);
     const tables = await tableResponse.json();
-    getTable = tables.find((t) => t.id == idTable);
+    getTable = tables.find(table => table.id == objectID.id);
+  } else {
+    const orderResponse = await fetch(ORDER_API);
+    const orders = await orderResponse.json();
+    getOrder = orders.find(order => order.id == objectID.id);
   }
 
   getTable.foods_before.forEach((e) => {
@@ -208,78 +222,146 @@ async function reduceIncrease(foodId, calculation) {
 // Click nút Lưu để lưu dữ liệu
 const saveButton = document.querySelector('.save-button')
 saveButton.addEventListener('click', () => {
-  const idTable = localStorage.getItem('id_table');
+  const objectID = JSON.parse(localStorage.getItem('id_table'))
 
-  const cachedTable = localStorage.getItem('cached_table');
-  if (cachedTable) {
-    const getTable = JSON.parse(cachedTable);
-    const dataTable = {
-      ...getTable,
-      "time_create": getTable.time_create != 0 ? getTable.time_create : Date.now(),
+  if (objectID.type == 'table') {
+    const cachedTable = localStorage.getItem('cached_table');
+    if (cachedTable) {
+      const getTable = JSON.parse(cachedTable);
+      const dataTable = {
+        ...getTable,
+        "time_create": getTable.time_create != 0 ? getTable.time_create : Date.now(),
+      }
+      updateData(objectID.id, dataTable, TABLE_API);
     }
-    updateTable(idTable, dataTable);
+    window.location.href = "/src/NhanVien/Ban"
   }
-  window.location.href = "/src/NhanVien/Ban/index.html"
+  else {
+    const cachedTable = localStorage.getItem('cached_table');
+    if (cachedTable) {
+      const getTable = JSON.parse(cachedTable);
+      const checkFood = getTable.foods_after.length > 0 || getTable.foods_before.length > 0
+      const dataOrder = {
+        ...getTable,
+        "time_create": getTable.time_create != 0 ? getTable.time_create : Date.now(),
+        "status": checkFood,
+        "success": checkFood
+      }
+      
+      updateData(objectID.id, dataOrder, ORDER_API);
+    }
+    window.location.href = "/src/NhanVien/DonDatHang"
+  }
 })
 
 // Thêm món ăn vào bill
 async function addFoodToBill(id) {
-  const idTable = localStorage.getItem('id_table');
-
+  const objectID = JSON.parse(localStorage.getItem('id_table'))
+  var getTable = {}
   const cachedTable = localStorage.getItem('cached_table');
-  if (cachedTable) {
-    getTable = JSON.parse(cachedTable);
-  } else {
-    const tableResponse = await fetch(TABLE_API);
-    const tables = await tableResponse.json();
-    getTable = tables.find((t) => t.id == idTable);
-  }
-  
-  var check = false
-  getTable.foods_before.map((e) => {
-    if (e.id_food === id) {
-      e.quantity += 1;
-      check = true;
-    }
-  });
 
-  if (!check) {
-    getTable.foods_before.push({
-      id_food: id,
-      quantity: 1
-    });
+  if (objectID.type == 'table') {
+    if (cachedTable) {
+      getTable = JSON.parse(cachedTable);
+    } else {
+      const tableResponse = await fetch(TABLE_API);
+      const tables = await tableResponse.json();
+      getTable = tables.find(table => table.id == objectID.id);
+    }
   }
-  localStorage.setItem("cached_table", JSON.stringify(getTable))
-  setBill(getTable);
+  else {
+    var getTable = {}
+    const cachedTable = localStorage.getItem('cached_table');
+    if (cachedTable) {
+      getTable = JSON.parse(cachedTable);
+    } else {
+      const orderResponse = await fetch(ORDER_API);
+      const orders = await orderResponse.json();
+      getTable = orders.find(order => order.id == objectID.id);
+    }
+  }
+
+   var check = false
+    getTable.foods_before.map((e) => {
+      if (e.id_food === id) {
+        e.quantity += 1;
+        check = true;
+      }
+    });
+
+    if (!check) {
+      getTable.foods_before.push({
+        id_food: id,
+        quantity: 1
+      });
+    }
+    localStorage.setItem("cached_table", JSON.stringify(getTable))
+    setBill(getTable);
 }
 
 // Xử lý nút thanh toán
 const payEnd = document.querySelector('.pay-end')
 payEnd.addEventListener('click', async () => {
-  const idTable = localStorage.getItem('id_table');
+  const objectID = JSON.parse(localStorage.getItem('id_table'))
   const cachedTable = localStorage.getItem('cached_table');
+
+  const date = new Date()
   if (cachedTable) {
     getTable = JSON.parse(cachedTable);
     localStorage.removeItem('cached_table');
   }
   else {
-    const tableResponse = await fetch(TABLE_API);
-    const tables = await tableResponse.json();
-    getTable = tables.find((t) => t.id == idTable);
+    if (objectID.type == 'table') {
+      const tableResponse = await fetch(TABLE_API);
+      const tables = await tableResponse.json();
+      getTable = tables.find(table => table.id == objectID.id);
+      createHistory({
+        "id": generateUniqueID,
+        "time_start": getTable.time_create,
+        "time_end": Date.now(),
+        "total": sumTotal,
+        "type": "table",
+        "id_type": getTable.id
+      })
+      getTable.foods_before = [];
+      getTable.foods_after = [];
+      getTable.time_create = 0;
+      updateData(objectID.id, getTable, TABLE_API);
+      window.location.href = "/src/NhanVien/Ban"
+    }
+    else {
+      const orderResponse = await fetch(ORDER_API);
+      const orders = await orderResponse.json();
+      getOrder = orders.find(order => order.id == objectID.id);
+      createHistory({
+        "id": generateUniqueID,
+        "time_start": getOrder.time_create,
+        "time_end": Date.now(),
+        "total": sumTotal,
+        "type": "order",
+        "id_type": getOrder.id
+      })
+      getOrder.foods_before = [];
+      getOrder.foods_after = [];
+      getOrder.time_create = 0;
+      getOrder.status = false
+      
+      updateData(objectID.id, getOrder, ORDER_API);
+      window.location.href = "/src/NhanVien/DonDatHang"
+    }
   }
-
-  getTable.foods_before = [];
-  getTable.foods_after = [];
-  updateTable(idTable, getTable);
-  window.location.href = "/src/NhanVien/Ban/index.html"
 })
 
-
-
-// function startBill() {
-//   getFoodData()
-// }
-
-// startBill()
-
-
+// Xử lý navbar select css
+const navbar = document.querySelectorAll('.menu nav li');
+const objectID = JSON.parse(localStorage.getItem('id_table'))
+if (objectID.type == 'table') {
+  navbar[0].style = 'background-color: rgb(68, 68, 160);'
+  const aElement = navbar[0].querySelector("a");
+  aElement.style = 'color: white;'
+}
+else {
+  navbar[1].style = 'background-color: rgb(68, 68, 160);'
+  const aElement = navbar[1].querySelector("a");
+  aElement.style = 'color: white;'
+}

@@ -37,6 +37,6 @@ getTableData()
 
 // Hàm tìm kiếm bàn theo id
 async function searchIdTable(id) {
-  localStorage.setItem("id_table", id)
+  localStorage.setItem("id_table", JSON.stringify({ id: id, type: "table"}))
   window.location.href = "/src/NhanVien/HoaDon/index.html"
 }

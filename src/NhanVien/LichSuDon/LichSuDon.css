@@ -40,3 +40,42 @@ table th {
 .bill-name {
   padding-left: 10px;
 }
+
+.fa-coins,
+.fa-clock {
+  margin-right: 4px;
+}
+
+.date-history {
+    appearance: none; /* Ẩn giao diện mặc định */
+    background-color: white;
+    border: 2px solid rgb(68, 68, 160);
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: rgb(68, 68, 160);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    width: 200px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Khi người dùng hover vào */
+.date-history:hover {
+    background-color: rgba(68, 68, 160, 0.1);
+}
+
+/* Khi người dùng focus vào ô */
+.date-history:focus {
+    border-color: rgb(50, 50, 120);
+    box-shadow: 0 0 8px rgba(68, 68, 160, 0.5);
+}
+
+/* Khi người dùng chọn ngày */
+.date-history::-webkit-calendar-picker-indicator {
+    filter: invert(30%) sepia(50%) saturate(300%) hue-rotate(190deg);
+    cursor: pointer;
+}

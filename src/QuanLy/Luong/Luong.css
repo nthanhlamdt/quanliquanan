@@ -1,3 +1,4 @@
+/* CSS cho phần tạo lương */
 .btn-create_wage {
   width: 90%;
   display: flex;
@@ -9,35 +10,87 @@
 .month-select option {
   background-color: var(--color-text);
   color: #fff;
-  padding: 8px 10px;
+  padding: 10px 1px;
   border: none;
   border-radius: 3px;
   font-size: 15px;
   cursor: pointer;
 }
 
+/* CSS cho table */
 table {
-  width: 90%;
+  width: 100%;
   margin: 10px auto 0 auto;
   border-collapse: collapse;
   border: 1px solid var(--color-text);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 thead {
   background-color: var(--color-text);
   color: white;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-td {
-  padding: 8px;
+thead tr {
+  padding: 12px 15px;
 }
 
+thead td {
+  padding: 12px 15px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+tbody td {
+  padding: 12px 15px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+tbody tr:hover td {
+  color: var(--color-text);
+}
+
+thead tr:hover {
+  background-color: var(--color-text);
+  color: white;
+}
+
+tr, td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Các biểu tượng trong table */
 .fa-trash-can,
 .fa-image,
 .fa-pen-to-square {
   color: var(--color-text);
   cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.fa-trash-can:hover,
+.fa-image:hover,
+.fa-pen-to-square:hover {
+  transform: scale(1.1);
 }
 
 td span {
